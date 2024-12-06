@@ -283,8 +283,8 @@ html.no-js .no-js-hidden {
 
 @media screen and (min-width: 990px) {
   .header:not(.drawer-menu).page-width {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .page-width--narrow {
@@ -2295,8 +2295,13 @@ product-info .loading-overlay:not(.hidden) ~ *,
 /* Main Header Layout */
 .header-wrapper {
   display: block;
-  position: relative;
+  position: absolute;
   background-color: rgb(var(--color-background));
+  height: 70px;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  border-radius: 8px;
 }
 
 .header-wrapper--border-bottom {
@@ -2304,10 +2309,10 @@ product-info .loading-overlay:not(.hidden) ~ *,
 }
 
 .header {
-  display: grid;
-  grid-template-areas: 'left-icons heading icons';
-  grid-template-columns: 1fr 2fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 @media screen and (max-width: 749px) {
@@ -2340,7 +2345,6 @@ product-info .loading-overlay:not(.hidden) ~ *,
   .header--middle-left {
     grid-template-areas: 'heading navigation icons';
     grid-template-columns: auto auto 1fr;
-    column-gap: 2rem;
   }
 
   .header--middle-center:not(.drawer-menu) {
@@ -2767,8 +2771,6 @@ details[open] > .header__menu-item .icon-caret {
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
 }
 
 .header__menu-item:hover .header__active-menu-item {
